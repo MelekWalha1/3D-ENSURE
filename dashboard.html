@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AE3S Research — Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+ <nav>
+  <div class="nav-left">
+    <img src="images/logo.png" alt="AE3S Research logo">
+    <div class="brand">Innovation in sensing</div>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="datasheet.html">Products</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+  </ul>
+</nav>
+
+
+
+
+
+
+<section id="dashboard" class="dashboard">
+  <h2>Environmental Dashboard</h2>
+<section>
+<h2>Live Sensor Data</h2>
+<div id="charts-container"></div>
+<p id="status" style="color:#444"></p>
+</section>
+
+<!-- Login Form -->
+<section id="login-section">
+  <h2>Login to Access Dashboard</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button id="loginBtn">Login</button>
+  <p id="loginError" style="color:red; display:none;">Incorrect username or password</p>
+</section>
+
+<!-- Status Panel -->
+<div id="statusPanel">
+  <div class="row top-row"></div>
+  <div class="row bottom-row"></div>
+</div>
+
+
+
+  <!-- Temperature & Humidity side by side -->
+  <div class="row two-charts">
+    <canvas id="tempChart" class="chart"></canvas>
+    <canvas id="humChart" class="chart"></canvas>
+  </div>
+
+  <!-- Separate PM curves -->
+ <div class="row single-chart">
+    <canvas id="pm1Chart" class="chart"></canvas>
+  </div>
+  <div class="row single-chart">
+    <canvas id="pm2Chart" class="chart"></canvas>
+  </div>
+ <div class="row single-chart">
+    <canvas id="pm4Chart" class="chart"></canvas>
+  </div>
+  <div class="row single-chart">
+    <canvas id="pm10Chart" class="chart"></canvas>
+  </div>
+
+  <!-- Combined PM chart -->
+ <div class="row single-chart">
+    <canvas id="pmCombinedChart" class="chart"></canvas>
+  </div>
+</section>
+
+
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
